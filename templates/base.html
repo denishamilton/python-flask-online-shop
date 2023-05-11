@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ title }}</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container container">
+				<nav class="header__nav">
+					<div class="header__logo"></div>
+					<ul class="header__menu header-menu">
+						<li class="header-menu__item"><a href="{{ url_for('home') }}">Startseite</a></li>
+						<li class="header-menu__item"><a href="{{ url_for('haushaltsgeraete') }}">Haushaltsgeraete</a></li>
+						<li class="header-menu__item"><a href="{{ url_for('pc_laptops') }}">PC & Laptops</a></li>
+						<li class="header-menu__item"><a href="{{ url_for('kontakt') }}">Kontakt</a></li>
+						<li class="header-menu__item"><a href="{{ url_for('cart') }}">Cart</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main class="main">
+			<div class="main__container container">
+				{% block content %}{% endblock %}
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__content">
+					<div class="footer__createdblock created-block">
+						<p>Created by <span>Denys Gorozhanin</span> </p>
+					</div>
+					<ul class="footer__agbimpdat agb-imp-dat">
+						<li class="agb-imp-dat__item"><a href="{{ url_for('impressum') }}">Impressum</a></li>
+						<li class="agb-imp-dat__item"><a href="{{ url_for('datenschutz') }}">Datenschutz</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
